@@ -69,7 +69,7 @@ def yolov5():
             convert_vid = os.path.join('runs/detect/exp', str(ts)+'converted_video.mp4')
             os.system('ffmpeg -i {} -vcodec libx264 {}'.format(outputpath, convert_vid))
 
-            st_video2 = open(convert_vid, 'rb')
+            st_video2 = open(outputpath, 'rb')
             video_bytes2 = st_video2.read()
             st.video(video_bytes2)
 
