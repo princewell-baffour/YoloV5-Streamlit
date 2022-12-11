@@ -37,6 +37,7 @@ psutil  # system utilization
 thop  # FLOPs computation
 streamlit
 st_btn_select
+streamlit_option_menu
 # albumentations>=1.0.3
 # pycocotools>=2.0  # COCO mAP
 # roboflow
