@@ -51,7 +51,7 @@ def videoInput():
 
         ts = datetime.timestamp(datetime.now())
         imgpath = os.path.join('data/uploads', str(ts)+uploaded_video.name)
-        outputpath = os.path.join('runs\detect\exp', os.path.basename(imgpath))
+        outputpath = os.path.join('runs/detect/cum/', os.path.basename(imgpath))
 
         with open(imgpath, mode='wb') as f:
             f.write(uploaded_video.read())  # save video to disk
@@ -62,6 +62,8 @@ def videoInput():
         st.write("Uploaded Video")
         #detect(weights=cfg_model_path, source=imgpath, device=0) if device == 'cuda' else detect(weights=cfg_model_path, source=imgpath, device='cpu')
         detect(weights=cfg_model_path, source=imgpath)
+        #st_video2 = open(outputpath, 'rb')
+        print("Files:", os.listdir("runs/detect"))
         st_video2 = open(outputpath, 'rb')
         video_bytes2 = st_video2.read()
         st.video(video_bytes2)
