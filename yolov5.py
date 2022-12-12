@@ -56,8 +56,8 @@ def yolov5():
             #outputpath = os.path.join('data/video_output', os.path.basename(imgpath))
             outputpath = os.path.join('runs\detect\exp', os.path.basename(file_name))
 
-            print("Uploaded video path:",vidpath)
             
+
             with open(vidpath, mode='wb') as f:
                 f.write(uploaded_video.read())  # save video to disk
 
@@ -76,10 +76,11 @@ def yolov5():
             video_bytes2 = st_video2.read()
             st.video(video_bytes2)
 
-            vid_loc = os.path.join('runs/detect/exp/', str(ts)+uploaded_video.name)
+            
            
             st.write("Model Prediction")
             print("Output path:", outputpath)
+            print("Uploaded video path:",vidpath)
 
     st.header('AI Project - Object Detection')
     st.subheader('YOLOv5 Model Trained on our Custom Dataset')
