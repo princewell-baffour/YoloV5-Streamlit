@@ -8,7 +8,9 @@ from datetime import datetime
 import os
 import wget
 import time
+from pathlib import Path
 
+os_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def yolov5():
     ## CFG
     cfg_model_path = "models/yolov5best.pt" 
@@ -53,8 +55,8 @@ def yolov5():
             ts = datetime.timestamp(datetime.now())
             vidpath = os.path.join('data/uploads', str(ts)+uploaded_video.name)
             file_name = str(ts)+uploaded_video.name
-            #outputpath = os.path.join('data/video_output', os.path.basename(imgpath))
-            outputpath = os.path.join('runs\detect\exp', os.path.basename(file_name))
+            outputpath = os.path.join('exp', os.path.basename(file_name))
+            #outputpath = os.path.join('/run/detect/exp/', os.path.basename(file_name))
 
             
 
@@ -67,7 +69,7 @@ def yolov5():
             st.write("Uploaded Video")
             #detect(weights=cfg_model_path, source=imgpath, device=0) if device == 'cuda' else detect(weights=cfg_model_path, source=imgpath, device='cpu')
             detect(weights=cfg_model_path, source=vidpath)
-            print("Files:", os.listdir("runs/detect/exp"))
+            #print("Files:", os.listdir("runs/detect/exp"))
 
             #convert_vid = os.path.join('runs/detect/exp', str(ts)+'converted_video.mp4')
             #os.system('ffmpeg -i {} -vcodec libx264 {}'.format(outputpath, convert_vid))

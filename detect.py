@@ -90,7 +90,7 @@ def detect(
 
     #save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
     #(save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
-    save_dir = Path(project / name)
+    save_dir = Path(name)
 
     # Load model
     device = select_device(device)
