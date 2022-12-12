@@ -54,8 +54,10 @@ def yolov5():
             vidpath = os.path.join('data/uploads', str(ts)+uploaded_video.name)
             file_name = str(ts)+uploaded_video.name
             #outputpath = os.path.join('data/video_output', os.path.basename(imgpath))
-            outputpath = os.path.join('runs/detect/exp', os.path.basename(file_name))
+            outputpath = os.path.join('runs\detect\exp', os.path.basename(file_name))
 
+            print("Uploaded video path:",vidpath)
+            
             with open(vidpath, mode='wb') as f:
                 f.write(uploaded_video.read())  # save video to disk
 
@@ -66,8 +68,9 @@ def yolov5():
             #detect(weights=cfg_model_path, source=imgpath, device=0) if device == 'cuda' else detect(weights=cfg_model_path, source=imgpath, device='cpu')
             detect(weights=cfg_model_path, source=vidpath)
             print("Files:", os.listdir("runs/detect/exp"))
-            convert_vid = os.path.join('runs/detect/exp', str(ts)+'converted_video.mp4')
-            os.system('ffmpeg -i {} -vcodec libx264 {}'.format(outputpath, convert_vid))
+
+            #convert_vid = os.path.join('runs/detect/exp', str(ts)+'converted_video.mp4')
+            #os.system('ffmpeg -i {} -vcodec libx264 {}'.format(outputpath, convert_vid))
 
             st_video2 = open(outputpath, 'rb')
             video_bytes2 = st_video2.read()
@@ -76,7 +79,7 @@ def yolov5():
             vid_loc = os.path.join('runs/detect/exp/', str(ts)+uploaded_video.name)
            
             st.write("Model Prediction")
-            print("Filename:", convert_vid)
+            print("Output path:", outputpath)
 
     st.header('AI Project - Object Detection')
     st.subheader('YOLOv5 Model Trained on our Custom Dataset')
