@@ -84,6 +84,8 @@ def yolov5():
             print("Output path:", outputpath)
             print("Uploaded video path:",vidpath)
 
+
+
     st.header('AI Project - Object Detection')
     st.subheader('YOLOv5 Model Trained on our Custom Dataset')
     st.title('Options')

@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from yolov5 import *
-from yolov7 import *
+import webbrowser
+
 from eda import *
 
 def nav():
@@ -14,11 +15,13 @@ def nav():
             menu_icon="bullseye", default_index=0
         )
 
+    url = 'https://yolov7.streamlit.app/'
+
     if selected == "YoloV5":
         yolov5()
 
     if selected == "YoloV7":
-        yolov7()
+        webbrowser.open_new_tab(url)
 
     if selected == "EDA":
         EDA_Page()
