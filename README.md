@@ -62,13 +62,13 @@ Vertex AI is a platform that uses Google Cloud service to train a machine learni
 
 YOLO is one of the famous object detection algorithms due to its speed and accuracy. It was released shortly after the release of YOLOV4. YOLOV5 is built using the PyTorch framework. It accepts URL, filenames, PIL, OpenCV, Numpy and PyTorch inputs and can return detections in torch, pandas, and JSON output formats. YOLO is a Single Stage Detector that processes the input image only once to detect an object unlike other Two-Stage Detectors like Faster RCNN. 
 
-#### Confusion matrix
+### Confusion matrix
 
 The confusion matrix shows quite decent prediction but there are a few concerns: FP (False Positives) and background-FN (False Negatives). Unripe strawberry appears to have the most share of background objects that do not belong to any of the classes and shouldn’t have been detected. On the background false negatives, a few objects were missed by the detector and considered as some background objects.
 
 ![matrix](pics/conf_matrix.png)
 
-#### The precision recall curve
+### The precision recall curve
 
 The precision-recall curve shows the tradeoff between precision and recall for different thresholds. It is a useful measure of success of a prediction when the classes are very imbalanced. Precision measures how accurate the predictions are. The precision of the different classes is shown below with the mean average precision **mAP of 0.876**.
 
@@ -83,13 +83,13 @@ The precision-recall curve shows the tradeoff between precision and recall for d
 
 YOLO v7 is the newest YOLO algorithm, and it surpasses all previous object detection models and YOLO versions both in accuracy and speed. YOLO v7 has the potential to become the industry standard for object detection  
 
-#### Confusion matrix
+### Confusion matrix
 
 Similar to YOLO v5, the background false positives were huge for the unripe strawberries, which means that there were objects that were detected as unripe strawberries.
 
 ![confusion](pics/conf7.png)
 
-#### The precision recall curve
+### The precision recall curve
 
 When it came to the accuracy of the predictions, the different classes did pretty well, with an overall mean average precision of **0.871 mAP**. That is slightly below the accuracy of the YOLOv5 in this case.
 
@@ -102,13 +102,13 @@ When it came to the accuracy of the predictions, the different classes did prett
 
 We have faced some challenges on the road. Some are too minor to mention, some were straight up obstacles that forced us to move in another direction and some had us brainstorming for days onwards.
 
-#### Not enough credits on Google Vertex
+### Not enough credits on Google Vertex
 
 As mentioned earlier, the experiment included Google Vertex to be one of the machine learning tools.  It provides 50 euros for storage and training a tool. However, after just one training session, it already dropped to 19 dollars. Additionally, the accuracy was inferior to both versions of YOLO. Thus we decided to search for an alternative.
 
 ![credits](pics/credits.png)
 
-#### Collaboratory annotation of data
+### Collaboratory annotation of data
 
 As teamwork demands, we wanted to label our datasets together. We had found a few interesting tools for annotation, such as Label Studio, Labelbox, Prodigy, Make Sense etc. However, none of those tools support team collaboration. In other words, we cannot label the dataset in one folder.
 
@@ -116,7 +116,7 @@ What we did is simply splitting the dataset into 3 equal batches that randomly c
 
 ![ui](pics/ui.png)
 
-#### Browser support issues
+### Browser support issues
 
 After deploying a trained model to Streamlit, we realized that after the objects have been detected inside a video, neither Chrome nor Firefox could play an annotated video. The path to the video was right and it could be played locally. The problem was with streamlit and how it handles encoding videos. After a couple of trials repeating the same things in different browsers, we realized that a video detection works the best in Torch browsers in the cloud, and it could actually play an annotated video there.
 
