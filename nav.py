@@ -9,15 +9,17 @@ def nav():
     #1. as slidebar menu
     with st.sidebar:
         selected = option_menu(
-            menu_title= "AI Team 6",
-            options = ["YoloV5", "YoloV7", "EDA"],
-            icons=['binoculars', 'binoculars-fill','file-earmark-bar-graph'],
+            menu_title= "CodeFarm",
+            options = ["YoloV8"],
+            #options = ["YoloV5", "YoloV7", "EDA"],
+            #icons=['binoculars', 'binoculars-fill','file-earmark-bar-graph'],
+            icons=['binoculars'],
             menu_icon="bullseye", default_index=0
         )
 
     url = 'https://yolov7.streamlit.app/'
 
-    if selected == "YoloV5":
+    if selected == "YoloV8":
         yolov5()
 
     if selected == "YoloV7":
@@ -28,8 +30,8 @@ def nav():
 
     st.sidebar.subheader('Objects Detectable')
     st.sidebar.write("Strawberry flowers")
-    st.sidebar.write("Unripe strawberry")
+"""     st.sidebar.write("Unripe strawberry")
     st.sidebar.write("Duck")
     st.sidebar.write("Chicken")
     st.sidebar.write("Grapes")
-    st.sidebar.write("Watermelon")
+    st.sidebar.write("Watermelon") """

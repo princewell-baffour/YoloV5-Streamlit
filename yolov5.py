@@ -86,8 +86,8 @@ def yolov5():
 
 
 
-    st.header('AI Project - Object Detection')
-    st.subheader('YOLOv5 Model Trained on our Custom Dataset')
+    st.header('Project 4.0  - Yolov8 Model')
+    st.subheader('YOLOv8 Model Trained on our Custom Dataset(Strawberry)')
     st.title('Options')
         
     source = ("Image Detection", "Video Detection")
