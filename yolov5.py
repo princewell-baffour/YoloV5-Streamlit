@@ -87,7 +87,8 @@ def yolov5():
 
 
     st.header('Project 4.0  - Yolov8 Model')
-    st.subheader('YOLOv8 Model Trained on our Custom Dataset(Strawberry)')
+    st.subheader('YOLOv8 Model Trained on Custom Dataset(Strawberry)')
+    st.write(" Made with ❤ by Princewell")
     st.title('Options')
         
     source = ("Image Detection", "Video Detection")
